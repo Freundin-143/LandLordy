@@ -1,0 +1,12 @@
+wwwroot\app.css
+wwwroot\dashboard.css
+wwwroot\LandlordDashBoard.css
+wwwroot\login.css
+wwwroot\SignUp.css
+wwwroot\ViewApartment.css
+D:\source\repos\Test3\Test3\wwwroot\app.css
+D:\source\repos\Test3\Test3\wwwroot\login.css
+D:\source\repos\Test3\Test3\wwwroot\dashboard.css
+D:\source\repos\Test3\Test3\wwwroot\ViewApartment.css
+D:\source\repos\Test3\Test3\wwwroot\SignUp.css
+D:\source\repos\Test3\Test3\wwwroot\LandlordDashBoard.css

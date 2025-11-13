@@ -1,0 +1,95 @@
+﻿@page "/SignUp"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<link href="css/SignUp.css" rel="stylesheet" />
+
+<div class="profile-container">
+    <header class="profile-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+        </div>
+        <h2>Tenant Personal Information</h2>
+        <button class="edit-btn" @onclick="ToggleEdit">@((isEditing ? "SAVE" : "EDIT"))</button>
+    </header>
+
+    <div class="photo-section">
+        <div class="photo-placeholder" @onclick="UploadPhoto">
+            <span class="user-icon">👤</span>
+        </div>
+        <p class="insert-photo">Insert Photo</p>
+    </div>
+
+    <div class="info-section">
+        <div class="info-column">
+            <label>First Name:</label>
+            <input @bind="tenant.FirstName" disabled="@(!isEditing)" />
+
+            <label>Middle Name:</label>
+            <input @bind="tenant.MiddleName" disabled="@(!isEditing)" />
+
+            <label>Last Name:</label>
+            <input @bind="tenant.LastName" disabled="@(!isEditing)" />
+
+            <label>Gender:</label>
+            <input @bind="tenant.Gender" disabled="@(!isEditing)" />
+        </div>
+
+        <div class="info-column">
+            <label>Birthdate:</label>
+            <input type="date" @bind="tenant.Birthdate" disabled="@(!isEditing)" />
+
+            <label>Age:</label>
+            <input @bind="tenant.Age" disabled="@(!isEditing)" />
+
+            <label>Contact Number:</label>
+            <input @bind="tenant.ContactNumber" disabled="@(!isEditing)" />
+
+            <label>Email Address:</label>
+            <input type="email" @bind="tenant.Email" disabled="@(!isEditing)" />
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool isEditing = false;
+
+    private TenantModel tenant = new()
+    {
+        FirstName = "Juan",
+        MiddleName = "Dela",
+        LastName = "Cruz",
+        Gender = "Male",
+        Birthdate = new DateTime(1995, 5, 10),
+        Age = "30",
+        ContactNumber = "09171234567",
+        Email = "juancruz@email.com"
+    };
+
+    private void ToggleEdit()
+    {
+        if (isEditing)
+        {
+            // TODO: Save tenant data to DB or API
+        }
+        isEditing = !isEditing;
+    }
+
+    private void UploadPhoto()
+    {
+        // TODO: Add upload logic here
+        Console.WriteLine("Upload photo clicked.");
+    }
+
+    public class TenantModel
+    {
+        public string? FirstName { get; set; }
+        public string? MiddleName { get; set; }
+        public string? LastName { get; set; }
+        public string? Gender { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string? Age { get; set; }
+        public string? ContactNumber { get; set; }
+        public string? Email { get; set; }
+    }
+}
